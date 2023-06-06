@@ -7,6 +7,7 @@ import 'package:flutter/rendering.dart';
 const interSpace = 10.0;
 const framePadding = 15.0;
 const elementSpacing = 10.0;
+const Color offSelectedColor = Color.fromARGB(255, 140, 173, 162);
 
 class Home extends StatefulWidget {
   @override
@@ -47,7 +48,7 @@ class _HomeState extends State<Home> {
                           borderRadius: BorderRadius.circular(30),
                           color: isMale
                               ? Theme.of(context).primaryColor
-                              : Colors.blueGrey),
+                              : offSelectedColor),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -82,7 +83,7 @@ class _HomeState extends State<Home> {
                           borderRadius: BorderRadius.circular(30),
                           color: !isMale
                               ? Theme.of(context).primaryColor
-                              : Colors.blueGrey),
+                              : offSelectedColor),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -114,7 +115,7 @@ class _HomeState extends State<Home> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Colors.blueGrey),
+                  color: offSelectedColor),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -154,7 +155,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        color: Colors.blueGrey),
+                        color: offSelectedColor),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -182,7 +183,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        color: Colors.blueGrey),
+                        color: offSelectedColor),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
