@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:bmi_demo/result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 
 const interSpace = 10.0;
 const framePadding = 15.0;
@@ -239,6 +240,19 @@ class _HomeState extends State<Home> {
         FloatingActionButton(
           heroTag: '$varr -',
           onPressed: () {
+            showToast('mainAxisAlignment/FloatingActionButton',
+                context: context,
+                borderRadius: BorderRadius.circular(40),
+                textPadding: EdgeInsets.fromLTRB(15, 8, 15, 8),
+                animation: StyledToastAnimation.scale,
+                reverseAnimation: StyledToastAnimation.fade,
+                position: StyledToastPosition(
+                    align: Alignment.bottomCenter, offset: 100.0),
+                animDuration: Duration(milliseconds: 500),
+                duration: Duration(seconds: 2),
+                curve: Curves.elasticOut,
+                reverseCurve: Curves.linear,
+                backgroundColor: Color.fromARGB(244, 66, 66, 66));
             setState(() {
               switch (varr) {
                 case 'weight':
