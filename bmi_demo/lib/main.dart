@@ -1,5 +1,6 @@
 import 'package:bmi_demo/home.dart';
 import 'package:bmi_demo/result.dart';
+import 'package:bmi_demo/sliverappbar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           // This is the theme of your application.
           //
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
               bodyMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           primarySwatch: Colors.teal,
         ),
-        home: Home());
+        home: SliverBar());
     // Result(result: 22.1, isMale: true, age: 22));
   }
 }
