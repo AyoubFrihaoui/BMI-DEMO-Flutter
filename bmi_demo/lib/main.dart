@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
               bodyMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           primarySwatch: Colors.teal,
         ),
-        home: SliverBar());
+        home: Home());
     // Result(result: 22.1, isMale: true, age: 22));
   }
 }

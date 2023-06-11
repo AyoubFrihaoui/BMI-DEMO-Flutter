@@ -49,6 +49,37 @@ class Result extends StatelessWidget {
                 'Health: ${resultPhrase}',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
+              ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40)))),
+                onPressed: () {
+                  final AlertDialog alert = AlertDialog(
+                    icon: Icon(Icons.account_balance_rounded),
+                    title: Text('data'),
+                    content: Container(
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10))),
+                            child: Text('close'))),
+                  );
+                  showDialog(
+                      barrierDismissible: false,
+                      context: context,
+                      builder: (context) {
+                        return alert;
+                      });
+                },
+                child: Container(
+                    alignment: Alignment.center,
+                    height: 40,
+                    width: double.infinity,
+                    child: Text('Dialog')),
+              )
             ],
           ),
         ),
