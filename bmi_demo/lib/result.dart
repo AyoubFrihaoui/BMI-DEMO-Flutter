@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flushbar/flutter_flushbar.dart';
 
 class Result extends StatefulWidget {
   final double result;
@@ -87,37 +88,13 @@ class _ResultState extends State<Result> {
                     child: Text('Dialog')),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      appBarTitle = 'hi';
-                    });
-                    final snk = SnackBar(
-                      action: SnackBarAction(
-                          textColor: Color.fromARGB(255, 218, 218, 218),
-                          label: 'Undo',
-                          onPressed: () {
-                            setState(() {
-                              appBarTitle = 'Result';
-                            });
-                          }),
-                      content: Text(
-                        'data',
-                      ),
-                      duration: Duration(milliseconds: 1500),
-                      backgroundColor: Color.fromARGB(255, 223, 105, 105),
-                    );
-                    ScaffoldMessenger.of(context).showSnackBar(snk);
-                  },
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text('close'),
-                  ))
+              snackbar(context),
+              SizedBox(
+                height: 10,
+              ),
+              flushbar(context)
             ],
           ),
         ),
@@ -127,5 +104,68 @@ class _ResultState extends State<Result> {
     // TODO: implement build
     // ignore: dead_code
     throw UnimplementedError();
+  }
+
+  ElevatedButton snackbar(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          setState(() {
+            appBarTitle = 'hi';
+          });
+          final snk = SnackBar(
+            action: SnackBarAction(
+                textColor: Color.fromARGB(255, 218, 218, 218),
+                label: 'Undo',
+                onPressed: () {
+                  setState(() {
+                    appBarTitle = 'Result';
+                  });
+                }),
+            content: Text(
+              'data',
+            ),
+            duration: Duration(milliseconds: 1500),
+            backgroundColor: Color.fromARGB(255, 223, 105, 105),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snk);
+        },
+        style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20))),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text('snackbar'),
+        ));
+  }
+
+  ElevatedButton flushbar(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () {
+          final flush = Flushbar(
+            mainButton: TextButton(
+              child: Icon(
+                Icons.close,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            title: 'warning',
+            message: 'hhhh',
+            icon: Icon(
+              Icons.warning,
+              color: Colors.white,
+            ),
+          );
+          flush.show(context);
+        },
+        style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20))),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text('flush bar'),
+        ));
   }
 }
