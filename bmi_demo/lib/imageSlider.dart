@@ -19,7 +19,11 @@ class imageSlider extends StatelessWidget {
         ),
         CarouselSlider(
           options: CarouselOptions(
-              height: 186, aspectRatio: 16 / 9, enlargeCenterPage: true),
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 1),
+              height: 186,
+              aspectRatio: 16 / 9,
+              enlargeCenterPage: true),
           items: images
               .map((imgurl) => Container(
                     margin: EdgeInsets.symmetric(horizontal: 10),
