@@ -56,6 +56,22 @@ class _ResultState extends State<Result> {
                 'Health: ${resultPhrase}',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
+              Text(
+                  'hergkzkfpalfpkazfkzagkgkglsksgkagkgmlqgmgmqlgmqffffffffffffffffffffffffffffffflgg',
+                  overflow: TextOverflow.visible),
+              Text(
+                  'hergkzkfpalfpkazfkzagkgkglsksgkagkgmlqgmgmfffffffffffffffffffffffqlgmqlgg',
+                  overflow: TextOverflow.clip),
+              Text(
+                  'hergkzkfpalfpkazfkzagkgkglsksgkagkgmlqgmgmfffffffffffffffffffffffffqlgmqlgg',
+                  overflow: TextOverflow.fade),
+              Text(
+                  'hergkzkfpalfpkazfkzagkgkglsksgkagkgmlqgmgfffffffffffffffffffffffmqlgmqlgg',
+                  overflow: TextOverflow.ellipsis),
+              SelectableText(
+                'hergkzkfpalfpkazfkzagkgkglsksgkagkgmlqgmgmqlgmqlgg',
+                showCursor: true,
+              ),
               ElevatedButton(
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(

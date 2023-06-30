@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   url_launcher: ^6.1.11
   flutter_flushbar: ^0.0.2
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +73,8 @@ flutter_launcher_icons:
     image_path: "assets/icons/lanch_icon.png"
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - assets/images/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

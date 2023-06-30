@@ -1,4 +1,5 @@
 import 'package:bmi_demo/home.dart';
+import 'package:bmi_demo/imageSlider.dart';
 import 'package:bmi_demo/result.dart';
 import 'package:bmi_demo/sliverappbar.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
               bodyMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           primarySwatch: Colors.teal,
         ),
-        home: Home());
+        home: imageSlider());
     // Result(result: 22.1, isMale: true, age: 22));
   }
 }
