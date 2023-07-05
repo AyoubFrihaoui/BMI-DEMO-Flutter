@@ -80,6 +80,15 @@ class _imageSliderState extends State<imageSlider> {
                       cSharpBool = value!;
                       print(cSharpBool);
                     });
+                  }),
+              Switch(
+                  value: cSharpBool!,
+                  onChanged: (val) {
+                    setState(
+                      () {
+                        cSharpBool = val;
+                      },
+                    );
                   })
             ]);
           })),
