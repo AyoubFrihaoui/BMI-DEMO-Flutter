@@ -17,9 +17,13 @@ class _imageSliderState extends State<imageSlider> {
       'assets/images/s3.jpg'
     ];
 
+    String hiint = '';
+
     bool? cSharpBool = true;
     return Scaffold(
-      appBar: AppBar(title: Text('Image slider')),
+      appBar: AppBar(
+        title: Text('Image slider'),
+      ),
       body: Container(
           alignment: Alignment.center,
           color: backgroudColor,
@@ -89,6 +93,19 @@ class _imageSliderState extends State<imageSlider> {
                         cSharpBool = val;
                       },
                     );
+                  }),
+              DropdownButton(
+                  value: images[1],
+                  items: images.map((e) {
+                    return DropdownMenuItem(
+                      child: Text('${e}'),
+                      value: e,
+                    );
+                  }).toList(),
+                  onChanged: (zzz) {
+                    setState(() {
+                      hiint = zzz.toString();
+                    });
                   })
             ]);
           })),
