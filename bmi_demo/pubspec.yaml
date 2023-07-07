@@ -39,6 +39,7 @@ dependencies:
   url_launcher: ^6.1.11
   flutter_flushbar: ^0.0.2
   carousel_slider: ^4.2.1
+  marquee: ^2.2.3
 
 dev_dependencies:
   flutter_test:

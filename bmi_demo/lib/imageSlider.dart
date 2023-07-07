@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 
 class imageSlider extends StatefulWidget {
   @override
@@ -120,6 +121,19 @@ class _imageSliderState extends State<imageSlider> {
                   ),
                   Text('Group 2')
                 ],
+              ),
+              SizedBox(
+                height: 40.0,
+                child: Card(
+                  color: Color.fromARGB(255, 60, 117, 150),
+                  child: Marquee(
+                    text: 'Text()',
+                    blankSpace: 20,
+                    velocity: 100,
+                    accelerationDuration: Duration(seconds: 2),
+                    accelerationCurve: Curves.easeInExpo,
+                  ),
+                ),
               )
             ]);
           })),
