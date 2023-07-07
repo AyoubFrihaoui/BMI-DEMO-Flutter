@@ -148,6 +148,12 @@ class _imageSliderState extends State<imageSlider> {
                 ),
               ),
               pickedimage == null ? Text('data') : Image.file(pickedimage!),
+              Form(
+                  child: SingleChildScrollView(
+                child: TextFormField(
+                  decoration: InputDecoration(labelText: 'username'),
+                ),
+              ))
             ]);
           })),
     );
