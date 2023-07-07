@@ -106,7 +106,21 @@ class _imageSliderState extends State<imageSlider> {
                     setState(() {
                       hiint = zzz.toString();
                     });
-                  })
+                  }),
+              ExpansionTile(
+                title: Text('Section A'),
+                collapsedBackgroundColor: Color.fromARGB(255, 60, 117, 150),
+                backgroundColor: Color.fromARGB(255, 123, 173, 202),
+                children: [
+                  Divider(color: Color.fromARGB(255, 148, 148, 148)),
+                  ListTile(
+                    tileColor: Color.fromARGB(255, 60, 117, 150),
+                    title: Text('Group 1'),
+                    subtitle: Text('hiiiiiiiii'),
+                  ),
+                  Text('Group 2')
+                ],
+              )
             ]);
           })),
     );
