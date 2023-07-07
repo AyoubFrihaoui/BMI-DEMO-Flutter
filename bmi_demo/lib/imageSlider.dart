@@ -1,5 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'dart:io';
 
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 
@@ -17,10 +19,20 @@ class _imageSliderState extends State<imageSlider> {
       'assets/images/s2.jpg',
       'assets/images/s3.jpg'
     ];
-
     String hiint = '';
-
     bool? cSharpBool = true;
+    ImagePicker imgpick = ImagePicker();
+    File? pickedimage;
+    fetchimg() async {
+      final XFile? image = await imgpick.pickImage(source: ImageSource.gallery);
+      if (image == null) {
+        return;
+      }
+      setState(() {
+        pickedimage = File(image.path);
+      });
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Image slider'),
@@ -134,7 +146,8 @@ class _imageSliderState extends State<imageSlider> {
                     accelerationCurve: Curves.easeInExpo,
                   ),
                 ),
-              )
+              ),
+              pickedimage == null ? Text('data') : Image.file(pickedimage!),
             ]);
           })),
     );
