@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:bmi_demo/drawer.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,7 @@ class _imageSliderState extends State<imageSlider> {
     }
 
     return Scaffold(
+      drawer: drawer(),
       appBar: AppBar(
         title: Text('Image slider'),
       ),
