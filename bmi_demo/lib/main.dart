@@ -32,9 +32,18 @@ class MyHomepage extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         themeMode: Provider.of<ThemeProvider>(context).themeMode,
         darkTheme: ThemeData(
-          primarySwatch: Colors.grey,
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.blueAccent,
+              background: Colors.black,
+              onBackground: Colors.black,
+              primaryContainer: Colors.black),
+          scaffoldBackgroundColor: Colors.black,
+          useMaterial3: true,
+          primaryColor: Colors.black,
         ),
         theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+          useMaterial3: true,
           // This is the theme of your application.
           //
           // Try running your application with "flutter run". You'll see the

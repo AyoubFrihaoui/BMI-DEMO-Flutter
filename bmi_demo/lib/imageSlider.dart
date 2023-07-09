@@ -35,6 +35,7 @@ class _imageSliderState extends State<imageSlider> {
     }
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
       drawer: drawer(),
       appBar: AppBar(
         title: Text('Image slider'),
