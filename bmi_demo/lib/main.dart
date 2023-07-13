@@ -1,3 +1,4 @@
+import 'package:bmi_demo/animatedContaier.dart';
 import 'package:bmi_demo/home.dart';
 import 'package:bmi_demo/imageSlider.dart';
 import 'package:bmi_demo/providers/theme.dart';
@@ -58,7 +59,7 @@ class MyHomepage extends StatelessWidget {
               bodyMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           primarySwatch: Colors.teal,
         ),
-        home: imageSlider());
+        home: AnimatedContainerr());
     // Result(result: 22.1, isMale: true, age: 22));
   }
 }

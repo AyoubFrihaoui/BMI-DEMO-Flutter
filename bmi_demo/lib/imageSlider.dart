@@ -1,5 +1,6 @@
 import 'dart:io';
-
+import 'dart:math';
+import 'dart:math';
 import 'package:bmi_demo/drawer.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:image_picker/image_picker.dart';
@@ -24,6 +25,12 @@ class _imageSliderState extends State<imageSlider> {
     bool? cSharpBool = true;
     ImagePicker imgpick = ImagePicker();
     File? pickedimage;
+
+    double width = 20;
+    double height = 20;
+    Color color = Color.fromARGB(255, 133, 63, 63);
+    BorderRadius borderRadius = BorderRadius.circular(8);
+
     fetchimg() async {
       final XFile? image = await imgpick.pickImage(source: ImageSource.gallery);
       if (image == null) {
@@ -35,7 +42,19 @@ class _imageSliderState extends State<imageSlider> {
     }
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.play_arrow_rounded),
+          onPressed: () {
+            setState(() {
+              Random random = Random();
+              width = random.nextInt(100).toDouble();
+              height = random.nextInt(100).toDouble();
+              color = Color.fromARGB(random.nextInt(255), random.nextInt(255),
+                  random.nextInt(255), 1);
+              borderRadius =
+                  BorderRadius.circular(random.nextInt(100).toDouble());
+            });
+          }),
       drawer: drawer(),
       appBar: AppBar(
         title: Text('Image slider'),
@@ -156,7 +175,14 @@ class _imageSliderState extends State<imageSlider> {
                 child: TextFormField(
                   decoration: InputDecoration(labelText: 'username'),
                 ),
-              ))
+              )),
+              AnimatedContainer(
+                duration: const Duration(seconds: 1),
+                width: width,
+                height: height,
+                decoration:
+                    BoxDecoration(borderRadius: borderRadius, color: color),
+              )
             ]);
           })),
     );
