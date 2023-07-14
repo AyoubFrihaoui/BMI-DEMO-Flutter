@@ -6,6 +6,7 @@ import 'package:bmi_demo/result.dart';
 import 'package:bmi_demo/sliverappbar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:show_fps/show_fps.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,7 +60,12 @@ class MyHomepage extends StatelessWidget {
               bodyMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           primarySwatch: Colors.teal,
         ),
-        home: AnimatedContainerr());
+        home: ShowFPS(
+            alignment: Alignment.topRight,
+            visible: true,
+            showChart: false,
+            borderRadius: BorderRadius.all(Radius.circular(11)),
+            child: AnimatedContainerr()));
     // Result(result: 22.1, isMale: true, age: 22));
   }
 }

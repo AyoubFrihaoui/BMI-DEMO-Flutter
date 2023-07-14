@@ -39,19 +39,57 @@ class _AnimatedContainerrState extends State<AnimatedContainerr> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10), color: Colors.red),
           ),
-          AnimatedPositioned(
-            right: height,
+          AnimatedAlign(
+            alignment: Alignment(1, 0.5),
             duration: Duration(milliseconds: 100),
-            child: AnimatedContainer(
-              curve: Curves.easeInCirc,
-              duration: const Duration(milliseconds: 1000),
-              width: width,
-              height: height,
-              decoration:
-                  BoxDecoration(borderRadius: borderRadius, color: color),
+            child: AnimatedPadding(
+              duration: Duration(seconds: 1),
+              padding: EdgeInsets.all(height),
+              child: AnimatedContainer(
+                curve: Curves.easeInCirc,
+                duration: const Duration(milliseconds: 1000),
+                width: width,
+                height: height,
+                decoration:
+                    BoxDecoration(borderRadius: borderRadius, color: color),
+              ),
             ),
           ),
+          Logo(),
         ]),
+      ),
+    );
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
+
+class Logo extends StatefulWidget {
+  @override
+  State<Logo> createState() => _LogoState();
+}
+
+class _LogoState extends State<Logo> with SingleTickerProviderStateMixin {
+  AnimationController? _controller;
+  Animation<double>? _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 1000))
+          ..repeat();
+    _animation = CurvedAnimation(parent: _controller!, curve: Curves.easeIn);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return RotationTransition(
+      turns: _animation!,
+      child: Icon(
+        Icons.front_hand,
+        color: Colors.white,
+        size: 200,
       ),
     );
     // TODO: implement build
